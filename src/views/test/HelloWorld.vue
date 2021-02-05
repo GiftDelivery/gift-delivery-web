@@ -15,8 +15,8 @@
 <script>
   import { defineComponent, computed } from 'vue'
   import { useStore } from 'vuex'
-  import { key } from '../store'
-  import logo from '@/assets/logo.png'
+  import { key } from '@/store'
+  import logo from '@/assets/img/logo.png'
 
   export default defineComponent({
     name: 'HelloWorld',
