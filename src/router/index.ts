@@ -27,18 +27,18 @@ const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
-    path: '/test',
+    path: '',
     component: Layout,
     children: [
       {
-        path: 'helloWorld',
-        component: () => import('@/views/test/HelloWorld.vue'),
-        name: 'helloWorld'
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/content/dashboard.vue')
       },
       {
-        path: 'about',
-        component: () => import('@/views/test/about.vue'),
-        name: 'about'
+        path: '/notice',
+        name: 'notice',
+        component: () => import('@/views/content/notice.vue')
       }
     ]
   }

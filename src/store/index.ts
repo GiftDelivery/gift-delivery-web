@@ -1,21 +1,27 @@
 import { InjectionKey } from 'vue'
-import { createStore, Store } from 'vuex'
+import RootStateTypes, { AllStateTypes } from '@/store/interface'
+import { createStore, Store, useStore as baseUseStore } from 'vuex'
+import { getToken } from '@/utils/auth'
+import layout from '@/store/modules/layout/index'
+import user from '@/store/modules/user/index'
 
-export interface State {
-  count: number
+export const key: InjectionKey<Store<RootStateTypes>> = Symbol()
+
+export function useStore<T = AllStateTypes>() {
+  return baseUseStore<T>(key)
 }
 
-export const key: InjectionKey<Store<State>> = Symbol()
-
-export const store = createStore<State>({
+export const store = createStore<RootStateTypes>({
   state() {
     return {
-      count: 0
+      token: getToken()
     }
   },
-  mutations: {
-    increment(state) {
-      state.count++
-    }
+  getters: {},
+  mutations: {},
+  actions: {},
+  modules: {
+    layout,
+    user
   }
 })
