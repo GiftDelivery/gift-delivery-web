@@ -5,14 +5,17 @@ import Layout from '@/layout/index.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
+    name: 'login',
     component: () => import('@/views/login.vue')
   },
   {
     path: '/404',
+    name: '404',
     component: () => import('@/views/error/404.vue')
   },
   {
     path: '/401',
+    name: '401',
     component: () => import('@/views/error/401.vue')
   },
   {

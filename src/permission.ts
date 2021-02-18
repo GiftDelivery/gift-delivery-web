@@ -6,23 +6,11 @@ const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
   const token = getToken()
-
   if (token) {
     /* has token*/
     if (to.path === '/login') {
-      if (from.path === '/' || from.path === '/index') {
-        removeToken()
-        next('/login')
-      } else {
-        // store
-        //   .dispatch('CheckToken')
-        //   .then(() => {
-        //     next({ path: '/' })
-        //   })
-        //   .catch(() => {
-        //     next('/login')
-        //   })
-      }
+      removeToken()
+      next('/login')
     } else {
       // if (store.roles.length === 0) {
       //   // 判断当前用户是否已拉取完user_info信息

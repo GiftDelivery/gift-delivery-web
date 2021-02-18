@@ -4,9 +4,28 @@
       <i :class="!isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'" @click="change"></i>
     </div>
     <div>
-      <span>同步数据</span>
-      <span>{{ user.name }}</span>
-      <img :src="user.avatar" />
+      <el-dropdown trigger="click">
+        <span class="el-dropdown-link sync-data"> 同步数据 </span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="syncData(1)">同步空包</el-dropdown-item>
+            <el-dropdown-item @click="syncData(2)">同步快递</el-dropdown-item>
+            <el-dropdown-item @click="syncData(3)">同步礼品</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+      <el-dropdown trigger="click">
+        <div class="el-dropdown-link user-info">
+          <span>{{ user.name }}</span>
+          <img :src="user.avatar" />
+        </div>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="fadeOut(1)">设置</el-dropdown-item>
+            <el-dropdown-item @click="fadeOut(2)">登出</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
   </div>
 </template>
@@ -24,6 +43,20 @@
         isCollapse,
         user,
         change: () => store.commit('layoutModule/SET_COLLAPSE')
+      }
+    },
+    methods: {
+      syncData(val) {
+        console.log(val)
+      },
+      fadeOut(val) {
+        switch (val) {
+          case 1:
+            break
+          case 2:
+            this.$router.push({ name: 'login' })
+            break
+        }
       }
     }
   })
@@ -48,19 +81,22 @@
       display: inline-flex;
       justify-content: flex-end;
       align-items: center;
-      span {
-        display: inline-block;
-        margin: 0 4px;
+      .sync-data {
+        margin-right: 14px;
         color: #626262;
-        font-size: 12px;
-        cursor: pointer;
+        font-size: 14px;
       }
-      img {
-        width: 40px;
-        height: auto;
-        border-radius: 50%;
-        display: inline-block;
-        cursor: pointer;
+      .user-info {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        img {
+          width: 40px;
+          height: auto;
+          border-radius: 50%;
+          display: block;
+          margin-left: 4px;
+        }
       }
     }
   }
