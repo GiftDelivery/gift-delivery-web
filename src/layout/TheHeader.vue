@@ -42,7 +42,7 @@
       return {
         isCollapse,
         user,
-        change: () => store.commit('layoutModule/SET_COLLAPSE')
+        change: () => store.commit('layout/SET_COLLAPSE')
       }
     },
     methods: {
@@ -69,7 +69,7 @@
     display: flex;
 
     & > div:first-child {
-      width: 30px;
+      width: 30%;
       & > i {
         line-height: 60px;
         cursor: pointer;

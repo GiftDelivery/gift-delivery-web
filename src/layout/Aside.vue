@@ -1,7 +1,7 @@
 <template>
   <el-aside :width="!isCollapse ? '240px' : '65px'" class="aside">
     <div class="banner"> {{ !isCollapse ? 'Gift Branch' : 'GB' }} </div>
-    <el-menu class="menu" :collapse="isCollapse" :unique-opened="true" :router="true">
+    <el-menu class="menu" :collapse="isCollapse" :unique-opened="true" :router="true" :default-active="activeMenu">
       <template v-for="(item, index) in menu" :key="index">
         <el-submenu v-if="item.children && item.children.length !== 0" :index="`/${item.path}`">
           <template #title>
@@ -63,7 +63,7 @@
           {
             title: '仪表盘',
             icon: 'el-icon-setting',
-            path: 'dashboard'
+            path: ''
           },
           {
             title: '动态通知',
@@ -72,20 +72,25 @@
           },
           {
             title: '推荐人统计表',
-            icon: 'el-icon-setting'
+            icon: 'el-icon-setting',
+            path: 'recommender'
           },
           {
             title: '配置管理',
             icon: 'el-icon-setting',
+            path: 'setting',
             children: [
               {
                 title: '站点管理',
+                path: 'site',
                 children: [
                   {
-                    title: '我的站点'
+                    title: '我的站点',
+                    path: 'mySite'
                   },
                   {
-                    title: '小微商户申请'
+                    title: '小微商户申请',
+                    path: 'merchant'
                   }
                 ]
               },
@@ -188,6 +193,17 @@
             ]
           }
         ]
+      }
+    },
+    computed: {
+      activeMenu() {
+        const route = this.$route
+        const { meta, path } = route
+        // if set path, the sidebar will highlight the path you set
+        if (meta.activeMenu) {
+          return meta.activeMenu
+        }
+        return path
       }
     },
     methods: {}

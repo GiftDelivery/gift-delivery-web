@@ -1,1 +1,19 @@
 @import './element-ui.scss';
+
+.red {
+  color: red;
+}
+
+.box-card {
+  margin: 20px auto;
+}
+.box-card:first-child {
+  margin-top: 0 !important;
+}
+.box-card:last-child {
+  margin-bottom: 0 !important;
+}
+
+.opera-panel {
+  margin-bottom: 20px;
+}
