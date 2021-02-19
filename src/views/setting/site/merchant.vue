@@ -44,6 +44,17 @@
       </el-table>
       <Pagination :page="queryParams.pageNum" :limit="queryParams.pageSize" :total="total" @pagination="getList" />
     </el-card>
+
+    <el-dialog v-model="dialogVisible" title="新增小微商户" width="70%" top="7vh">
+      <el-form ref="form" :model="dialogForm" label-width="100px">
+        <el-form-item label="真实姓名" required :show-message="false">
+          <el-input v-model="dialogForm.xxx" placeholder="请输入真实姓名" clearable />
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submit">提交</el-button>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
   </div>
 </template>
 
@@ -62,7 +73,12 @@
           content: ''
         },
         loading: false,
-        tableData: []
+        tableData: [],
+        //
+        dialogVisible: false,
+        dialogForm: {
+          xxx: ''
+        }
       }
     },
     created() {
@@ -84,7 +100,10 @@
         this.getList()
       },
       async getList() {},
-      handleAdd() {}
+      handleAdd() {
+        this.dialogVisible = true
+      },
+      submit() {}
     }
   })
 </script>

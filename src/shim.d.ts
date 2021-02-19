@@ -11,3 +11,8 @@ declare module '*.vue' {
   const componentOptions: ComponentOptions
   export default componentOptions
 }
+
+declare module 'vue'
+declare module 'element-plus'
+declare module 'element-plus/lib/locale/lang/zh-cn'
+declare module 'nprogress'
