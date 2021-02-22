@@ -1,41 +1,43 @@
 <template>
-  <el-aside :width="!isCollapse ? '240px' : '65px'" class="aside">
-    <div class="banner"> {{ !isCollapse ? 'Gift Branch' : 'GB' }} </div>
-    <el-menu class="menu" :collapse="isCollapse" :unique-opened="true" :router="true" :default-active="activeMenu">
-      <template v-for="(item, index) in menu" :key="index">
-        <el-submenu v-if="item.children && item.children.length !== 0" :index="`/${item.path}`">
-          <template #title>
-            <i v-if="item.icon" :class="item.icon"></i>
-            <span>{{ item.title }}</span>
-          </template>
-          <template v-for="(it, ind) in item.children" :key="ind">
-            <el-submenu v-if="it.children && it.children.length !== 0" :index="`/${item.path}/${it.path}`">
-              <template #title>
+  <el-collapse-transition>
+    <el-aside :width="!isCollapse ? '240px' : '65px'" class="aside collapse-transition">
+      <div class="banner"> {{ !isCollapse ? 'Gift Branch' : 'GB' }} </div>
+      <el-menu class="menu" :collapse="isCollapse" :unique-opened="true" :router="true" :default-active="activeMenu">
+        <template v-for="(item, index) in menu" :key="index">
+          <el-submenu v-if="item.children && item.children.length !== 0" :index="`/${item.path}`">
+            <template #title>
+              <i v-if="item.icon" :class="item.icon"></i>
+              <span>{{ item.title }}</span>
+            </template>
+            <template v-for="(it, ind) in item.children" :key="ind">
+              <el-submenu v-if="it.children && it.children.length !== 0" :index="`/${item.path}/${it.path}`">
+                <template #title>
+                  <i v-if="it.icon" :class="it.icon"></i>
+                  <span>{{ it.title }}</span>
+                </template>
+                <el-menu-item
+                  v-for="(sub, subIndex) in it.children"
+                  :key="subIndex"
+                  :index="`/${item.path}/${it.path}/${sub.path}`"
+                >
+                  <i v-if="sub.icon" :class="sub.icon"></i>
+                  <span>{{ sub.title }}</span>
+                </el-menu-item>
+              </el-submenu>
+              <el-menu-item v-else :index="`/${item.path}/${it.path}`">
                 <i v-if="it.icon" :class="it.icon"></i>
                 <span>{{ it.title }}</span>
-              </template>
-              <el-menu-item
-                v-for="(sub, subIndex) in it.children"
-                :key="subIndex"
-                :index="`/${item.path}/${it.path}/${sub.path}`"
-              >
-                <i v-if="sub.icon" :class="sub.icon"></i>
-                <span>{{ sub.title }}</span>
               </el-menu-item>
-            </el-submenu>
-            <el-menu-item v-else :index="`/${item.path}/${it.path}`">
-              <i v-if="it.icon" :class="it.icon"></i>
-              <span>{{ it.title }}</span>
-            </el-menu-item>
-          </template>
-        </el-submenu>
-        <el-menu-item v-else :index="`/${item.path}`">
-          <i v-if="item.icon" :class="item.icon"></i>
-          <template #title>{{ item.title }}</template>
-        </el-menu-item>
-      </template>
-    </el-menu>
-  </el-aside>
+            </template>
+          </el-submenu>
+          <el-menu-item v-else :index="`/${item.path}`">
+            <i v-if="item.icon" :class="item.icon"></i>
+            <template #title>{{ item.title }}</template>
+          </el-menu-item>
+        </template>
+      </el-menu>
+    </el-aside>
+  </el-collapse-transition>
 </template>
 
 <script>
@@ -214,6 +216,7 @@
   .aside {
     display: flex;
     flex-direction: column;
+    transition: width 0.3s;
 
     .banner {
       height: 60px;

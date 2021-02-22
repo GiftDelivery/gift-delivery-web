@@ -39,6 +39,7 @@
         default: 'total, sizes, prev, pager, next, jumper'
       }
     },
+    emits: ['update:page', 'update:limit', 'pagination'],
     computed: {
       currentPage: {
         get() {

@@ -8,3 +8,9 @@
 .el-main {
   background-color: #f5f7fa;
 }
+.el-dialog {
+  max-height: 88vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: 5vh;
+}
