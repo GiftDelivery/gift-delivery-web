@@ -52,6 +52,18 @@ const routes: Array<RouteRecordRaw> = [
         name: 'merchant',
         component: () => import('@/views/setting/site/merchant.vue'),
         meta: { title: '小微商户申请' }
+      },
+      {
+        path: 'domain/secondLevel',
+        name: 'secondLevel',
+        component: () => import('@/views/setting/domain/secondLevel.vue'),
+        meta: { title: '二级域名' }
+      },
+      {
+        path: 'customer',
+        name: 'customer',
+        component: () => import('@/views/setting/customer/index.vue'),
+        meta: { title: '客服配置' }
       }
     ]
   }

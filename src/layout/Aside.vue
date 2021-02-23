@@ -55,12 +55,6 @@
     },
     data() {
       return {
-        // {
-        //   title:'',
-        //   icon:'',
-        //   path:'',
-        //   children:[]
-        // }
         menu: [
           {
             title: '仪表盘',
@@ -98,14 +92,17 @@
               },
               {
                 title: '域名管理',
+                path: 'domain',
                 children: [
                   {
-                    title: '二级域名'
+                    title: '二级域名',
+                    path: 'secondLevel'
                   }
                 ]
               },
               {
-                title: '客服配置'
+                title: '客服配置',
+                path: 'customer'
               },
               {
                 title: '返佣配置'
@@ -200,11 +197,8 @@
     computed: {
       activeMenu() {
         const route = this.$route
-        const { meta, path } = route
+        const { path } = route
         // if set path, the sidebar will highlight the path you set
-        if (meta.activeMenu) {
-          return meta.activeMenu
-        }
         return path
       }
     },
