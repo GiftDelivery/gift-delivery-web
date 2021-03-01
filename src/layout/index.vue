@@ -17,8 +17,8 @@
 
 <script>
   import { defineComponent } from 'vue'
-  import Aside from './Aside.vue'
-  import TheHeader from './TheHeader.vue'
+  import Aside from './components/Aside.vue'
+  import TheHeader from './components/TheHeader.vue'
   // import TheFooter from './TheFooter.vue'
 
   export default defineComponent({
