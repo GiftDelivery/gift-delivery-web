@@ -7,11 +7,13 @@ import vue from '@vitejs/plugin-vue'
  */
 export default {
   plugins: [vue()],
-  // alias: {
-  //   '@': path.resolve(__dirname, 'src')
-  // },
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, 'src')
+      }
+    ],
     optimizeDeps: {
       include: ['javascript-time-ago/locale/de']
     }

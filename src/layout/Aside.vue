@@ -105,31 +105,39 @@
                 path: 'customer'
               },
               {
-                title: '返佣配置'
+                title: '返佣配置',
+                path: 'commission'
               },
               {
-                title: '自定义轮播图'
+                title: '自定义轮播图',
+                path: 'banner'
               }
             ]
           },
           {
             title: '仓库管理',
             icon: 'el-icon-setting',
+            path: 'warehouse',
             children: [
               {
-                title: '我的礼品'
+                title: '我的礼品',
+                path: 'gift'
               },
               {
-                title: '我的面单'
+                title: '我的面单',
+                path: 'faceSheet'
               },
               {
-                title: '我的空包'
+                title: '我的空包',
+                path: 'packet'
               },
               {
-                title: '淘宝店铺管理'
+                title: '淘宝店铺管理',
+                path: 'tbShop'
               },
               {
-                title: '拼多多店铺管理'
+                title: '拼多多店铺管理',
+                path: 'pddShop'
               }
             ]
           },

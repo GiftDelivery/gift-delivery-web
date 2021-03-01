@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
   import { defineComponent, computed } from 'vue'
   import { useStore } from '@/store'
 
@@ -46,10 +46,10 @@
       }
     },
     methods: {
-      syncData(val) {
+      syncData(val: string): void {
         console.log(val)
       },
-      fadeOut(val) {
+      fadeOut(val: number) {
         switch (val) {
           case 1:
             break

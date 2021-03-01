@@ -64,6 +64,54 @@ const routes: Array<RouteRecordRaw> = [
         name: 'customer',
         component: () => import('@/views/setting/customer/index.vue'),
         meta: { title: '客服配置' }
+      },
+      {
+        path: 'commission',
+        name: 'commission',
+        component: () => import('@/views/setting/commission/index.vue'),
+        meta: { title: '返佣配置' }
+      },
+      {
+        path: 'banner',
+        name: 'banner',
+        component: () => import('@/views/setting/banner/index.vue'),
+        meta: { title: '自定义轮播图' }
+      }
+    ]
+  },
+  {
+    path: '/warehouse',
+    component: Layout,
+    children: [
+      {
+        path: 'gift',
+        name: 'gift',
+        component: () => import('@/views/warehouse/gift/index.vue'),
+        meta: { title: '我的站点' }
+      },
+      {
+        path: 'faceSheet',
+        name: 'faceSheet',
+        component: () => import('@/views/warehouse/faceSheet/index.vue'),
+        meta: { title: '我的面单' }
+      },
+      {
+        path: 'packet',
+        name: 'packet',
+        component: () => import('@/views/warehouse/packet/index.vue'),
+        meta: { title: '我的空包' }
+      },
+      {
+        path: 'tbShop',
+        name: 'tbShop',
+        component: () => import('@/views/warehouse/shop/tb.vue'),
+        meta: { title: '淘宝店铺管理' }
+      },
+      {
+        path: 'pddShop',
+        name: 'pddShop',
+        component: () => import('@/views/warehouse/shop/pdd.vue'),
+        meta: { title: '拼多多店铺管理' }
       }
     ]
   }

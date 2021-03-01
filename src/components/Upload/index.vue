@@ -80,7 +80,9 @@
     },
     methods: {
       handCheckAccept(fileList) {
-        const flag = fileList.every((item) => this.accept.indexOf(item.name.substr(item.name.lastIndexOf('.'))) !== -1)
+        const flag = fileList.every(
+          (item) => this.accept.indexOf(item.name.substr(item.name.lastIndexOf('.')).toLocaleLowerCase()) !== -1
+        )
         if (!flag) {
           this.$message.warning('文件格式不正确,请重新选择')
           this.fileList = []
