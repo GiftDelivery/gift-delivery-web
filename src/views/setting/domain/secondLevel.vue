@@ -33,6 +33,7 @@
             end-placeholder="结束日期"
             format="YYYY-MM-DD"
             style="width: 100%"
+            @change="handleQuery"
           />
         </el-form-item>
         <el-form-item label="是否删除">

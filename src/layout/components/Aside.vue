@@ -143,32 +143,40 @@
           },
           {
             title: '商户管理',
-            icon: 'el-icon-setting'
+            icon: 'el-icon-setting',
+            path: 'merchantManage'
           },
           {
             icon: 'el-icon-setting',
             title: '资金管理',
+            path: 'funds',
             children: [
               {
-                title: '商户账户管理'
+                title: '商户账户管理',
+                path: 'merchantAccount'
               },
               {
-                title: '账户明细'
+                title: '账户明细',
+                path: 'account'
               },
               {
-                title: '商户充值管理'
+                title: '商户充值管理',
+                path: 'merchantRecharge'
               },
               {
-                title: '佣金提现'
+                title: '佣金提现',
+                path: 'commission'
               }
             ]
           },
           {
             icon: 'el-icon-setting',
             title: '订单管理',
+            path: 'order',
             children: [
               {
-                title: '站点续费订单'
+                title: '站点续费订单',
+                path: 'siteRenewal'
               },
               {
                 title: '分站充值'

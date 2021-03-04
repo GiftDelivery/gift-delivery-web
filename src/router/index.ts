@@ -24,16 +24,22 @@ const routes: Array<RouteRecordRaw> = [
         meta: { title: '仪表盘' }
       },
       {
-        path: '/notice',
+        path: 'notice',
         name: 'notice',
         component: () => import('@/views/content/notice/index.vue'),
         meta: { title: '动态通知' }
       },
       {
-        path: '/recommender',
+        path: 'recommender',
         name: 'recommender',
         component: () => import('@/views/content/recommender/index.vue'),
         meta: { title: '推荐人统计表' }
+      },
+      {
+        path: 'merchantManage',
+        name: 'merchantManage',
+        component: () => import('@/views/content/merchantManage/index.vue'),
+        meta: { title: '商户管理' }
       }
     ]
   },
@@ -112,6 +118,48 @@ const routes: Array<RouteRecordRaw> = [
         name: 'pddShop',
         component: () => import('@/views/warehouse/shop/pdd.vue'),
         meta: { title: '拼多多店铺管理' }
+      }
+    ]
+  },
+  {
+    path: '/funds',
+    component: Layout,
+    children: [
+      {
+        path: 'merchantAccount',
+        name: 'merchantAccount',
+        component: () => import('@/views/funds/merchantAccount/index.vue'),
+        meta: { title: '商户明细管理' }
+      },
+      {
+        path: 'account',
+        name: 'account',
+        component: () => import('@/views/funds/account/index.vue'),
+        meta: { title: '账户明细' }
+      },
+      {
+        path: 'merchantRecharge',
+        name: 'merchantRecharge',
+        component: () => import('@/views/funds/merchantRecharge/index.vue'),
+        meta: { title: '商户充值管理' }
+      },
+      {
+        path: 'commission',
+        name: 'commission',
+        component: () => import('@/views/funds/commission/index.vue'),
+        meta: { title: '佣金管理' }
+      }
+    ]
+  },
+  {
+    path: '/order',
+    component: Layout,
+    children: [
+      {
+        path: 'siteRenewal',
+        name: 'siteRenewal',
+        component: () => import('@/views/order/siteRenewal/index.vue'),
+        meta: { title: '站点续费订单' }
       }
     ]
   }
