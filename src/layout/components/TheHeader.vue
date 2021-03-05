@@ -52,6 +52,7 @@
       fadeOut(val: number) {
         switch (val) {
           case 1:
+            this.$router.push({ name: 'personal' })
             break
           case 2:
             this.$router.push({ name: 'login' })

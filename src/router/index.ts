@@ -160,6 +160,60 @@ const routes: Array<RouteRecordRaw> = [
         name: 'siteRenewal',
         component: () => import('@/views/order/siteRenewal/index.vue'),
         meta: { title: '站点续费订单' }
+      },
+      {
+        path: 'substation',
+        name: 'substation',
+        component: () => import('@/views/order/substation/index.vue'),
+        meta: { title: '分站充值' }
+      },
+      {
+        path: 'orderList',
+        name: 'orderList',
+        component: () => import('@/views/order/index.vue'),
+        meta: { title: '订单列表' }
+      },
+      {
+        path: 'nonAgency',
+        name: 'nonAgency',
+        component: () => import('@/views/order/nonAgency/index.vue'),
+        meta: { title: '非代发订单' }
+      }
+    ]
+  },
+  {
+    path: '/vip',
+    component: Layout,
+    children: [
+      {
+        path: 'siteVip',
+        name: 'siteVip',
+        component: () => import('@/views/vip/siteVip/index.vue'),
+        meta: { title: '站点VIP配置' }
+      }
+    ]
+  },
+  {
+    path: '/subordinateRebate',
+    component: Layout,
+    children: [
+      {
+        path: 'superiorRewards',
+        name: 'superiorRewards',
+        component: () => import('@/views/subordinateRebate/superiorRewards/index.vue'),
+        meta: { title: '上级奖励' }
+      }
+    ]
+  },
+  {
+    path: '/mySeting',
+    component: Layout,
+    children: [
+      {
+        path: 'personal',
+        name: 'personal',
+        component: () => import('@/views/content/personal/index.vue'),
+        meta: { title: '用户设置' }
       }
     ]
   }

@@ -179,31 +179,38 @@
                 path: 'siteRenewal'
               },
               {
-                title: '分站充值'
+                title: '分站充值',
+                path: 'substation'
               },
               {
-                title: '订单列表'
+                title: '订单列表',
+                path: 'orderList'
               },
               {
-                title: '非代发订单'
+                title: '非代发订单',
+                path: 'nonAgency'
               }
             ]
           },
           {
             icon: 'el-icon-setting',
             title: 'VIP 系统',
+            path: 'vip',
             children: [
               {
-                title: '站点VIP配置'
+                title: '站点VIP配置',
+                path: 'siteVip'
               }
             ]
           },
           {
             icon: 'el-icon-setting',
             title: '上下级返佣',
+            path: 'subordinateRebate',
             children: [
               {
-                title: '上级奖励'
+                title: '上级奖励',
+                path: 'superiorRewards'
               }
             ]
           }
